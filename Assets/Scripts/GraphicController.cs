@@ -23,7 +23,7 @@ public class GraphicController : MonoBehaviour
 
         _currentCource.positionCount = 2;
 
-        InvokeRepeating(nameof(AddPoint), 0, 0.5f);
+        InvokeRepeating(nameof(AddPoint), 0, 1f);
     }
 
     private void Update()

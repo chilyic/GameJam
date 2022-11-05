@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Garlik : MonoBehaviour
 {
     public int Garlics;
-    public TMPro.TMP_Text GarlicsText;
+    public TMP_Text GarlicsText;
     [SerializeField]
     private Goblin goblin;
     [SerializeField]
