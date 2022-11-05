@@ -10,8 +10,9 @@ public class PlayerBalance : MonoBehaviour
     [SerializeField] private LineRenderer _line;
     [SerializeField] private Transform[] _points;
 
-    public float[] _cource;
-    public float _balance = 100;
+    private float _cource;
+    private float _balance = 5000;
+    private float _currency;
 
     private void Awake()
     {
@@ -20,20 +21,22 @@ public class PlayerBalance : MonoBehaviour
 
     public void Buy()
     {
-        DrawLine();
-        _balanceTxt.text = "0";
+        DrawLine();        
+        _balance = _currency / _cource;
+        _balanceTxt.text = $"{_balance}";
     }
 
     public void Sell()
     {
         DrawLine();
-        _balanceTxt.text = $"{_balance + _cource[0] / 10}";
+        _balanceTxt.text = "0";
+        _currency = _balance * _cource;
     }
 
     public void DrawLine()
     {
         _cource = _graphic.GetCource();
-        foreach (var point in _points) point.position = new Vector3(point.position.x, _cource[1], point.position.z);
+        foreach (var point in _points) point.position = new Vector3(point.position.x, _cource, point.position.z);
         for (int i = 0; i < _points.Length; i++)
         {
             _line.SetPosition(i, _points[i].position);

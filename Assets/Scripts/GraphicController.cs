@@ -70,12 +70,8 @@ public class GraphicController : MonoBehaviour
         _line.positionCount--;
     }
 
-    public float[] GetCource()
+    public float GetCource()
     {
-        float[] values = new float[2];
-        values[0] = _points[_points.Count - 1].gameObject.transform.localPosition.y;
-        values[1] = _points[_points.Count - 1].gameObject.transform.position.y;
-
-        return values;
+        return _points[_points.Count - 1].gameObject.transform.position.y;
     }
 }
