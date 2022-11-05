@@ -495,7 +495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366611360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 263, y: 780, z: 20}
+  m_LocalPosition: {x: 823, y: 780, z: 20}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1654,7 +1654,7 @@ GameObject:
   - component: {fileID: 1647508724}
   - component: {fileID: 1647508725}
   m_Layer: 5
-  m_Name: AngrySlider
+  m_Name: AngerSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
