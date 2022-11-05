@@ -1,42 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Health : MonoBehaviour
 {
+    [SerializeField] PlayerBalance _balance;
 
-    private int Hpoints;
+    //private float Hpoints;
     [SerializeField]
-    private TMPro.TMP_Text HealthText;
+    private TMP_Text HealthText;
     // Start is called before the first frame update
     void Start()
     {
-        Hpoints = 10;
-        HealthText.text = Hpoints.ToString();
+        //Hpoints = _balance.Balance;
+        HealthText.text = _balance.Balance.ToString();
     }
 
-    public void ChangeHpoints(int value)
+    public void ChangeHpoints(float value)
     {
-        Hpoints += value;
-        if (Hpoints < 0)
+        _balance.Balance += value;
+        if (_balance.Balance < 0)
         {
-            Hpoints = 0;
+            _balance.Balance = 0;
         }
-        HealthText.text = Hpoints.ToString();
-        if (Hpoints < 0)
+        HealthText.text = _balance.Balance.ToString();
+        if (_balance.Balance < 0)
         {
             DeathBecome();
         }
-        else if (Hpoints>100)
+        else if (_balance.Balance > 10000)
         {
             WinBecome();
         }
     }
 
-    public int CurrentHP()
+    public float CurrentHP()
     {
-        return Hpoints;
+        return _balance.Balance;
     }
 
     public void DeathBecome()

@@ -1,15 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Goblin : MonoBehaviour
 {
 
     public bool IsActiveToBuy;
-    public int GarlicCost;
+    public float GarlicCost;
     [SerializeField]
-    private TMPro.TMP_Text GarlicCostText;
+    private TMP_Text GarlicCostText;
 
     [SerializeField]
     private float StayTime;

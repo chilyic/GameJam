@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ public class GraphicView : MonoBehaviour
     [SerializeField] private GraphicController _graphic;
     [SerializeField] private RectTransform _graphicRect;
 
-    public List<Transform> _points;
+    private List<Transform> _points;
 
     private void Start()
     {
