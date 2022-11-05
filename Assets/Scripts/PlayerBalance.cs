@@ -30,7 +30,6 @@ public class PlayerBalance : MonoBehaviour
     public void Sell()
     {
         DrawLine();
-        //_balanceTxt.text = "0";
         _currency = (_balance / 2) * _cource;
     }
 

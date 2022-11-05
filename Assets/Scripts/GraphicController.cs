@@ -37,15 +37,14 @@ public class GraphicController : MonoBehaviour
     public void AddPoint()
     {
         Vector3 newPos = _points[_points.Count - 1].position;
-        int rand = UnityEngine.Random.Range(-40, 40) + _multyple;
+        float rand = (float)(UnityEngine.Random.Range(-30, 30) + _multyple) / 100;
         newPos.y += rand;
-        
-        if (newPos.y > 900 || newPos.y < 500)
+        if (newPos.y > 3.9f || newPos.y < 1.75f)
         {
             newPos.y += -2 * rand;
         }
 
-        newPos.x += 30;
+        newPos.x += 0.2f;
         Transform point = Instantiate(_point, newPos, Quaternion.identity, transform);
         _line.positionCount++;
         _points.Add(point);

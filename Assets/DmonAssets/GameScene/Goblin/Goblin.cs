@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Goblin : MonoBehaviour
@@ -19,12 +18,12 @@ public class Goblin : MonoBehaviour
     private float MaxTime;
 
     private Animator anim;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         IsActiveToBuy = false;
         GarlicCostText.text = GarlicCost.ToString();
-           anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         StartCoroutine(GoblinBecome());
     }
 
@@ -41,12 +40,12 @@ public class Goblin : MonoBehaviour
     {
         IsActiveToBuy = true;
         anim.SetTrigger("Come");
-        print("Come");
+        //print("Come");
     }
     private void GoblinOut()
     {
         IsActiveToBuy = false;
         anim.SetTrigger("Out");
-        print("Out");
+        //print("Out");
     }
 }

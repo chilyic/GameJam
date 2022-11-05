@@ -18,7 +18,7 @@ public class GraphicView : MonoBehaviour
     {
         foreach (var point in _points)
         {
-            point.transform.position = new Vector3(point.position.x - 30, point.position.y, point.position.z);
+            point.transform.position = new Vector3(point.position.x - 0.2f, point.position.y, point.position.z);
         }
     }
 }
