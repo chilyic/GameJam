@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] PlayerBalance _balance;
@@ -40,10 +40,10 @@ public class Health : MonoBehaviour
 
     public void DeathBecome()
     {
-
+        SceneManager.LoadScene(2);
     }
     public void WinBecome()
     {
-
+        SceneManager.LoadScene(3);
     }
 }
