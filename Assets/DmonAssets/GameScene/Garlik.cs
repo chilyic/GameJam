@@ -10,7 +10,7 @@ public class Garlik : MonoBehaviour
     [SerializeField]
     private Health health;
 
-    private void Start()
+private void Start()
     {
         Garlics = 0;
         GarlicsText.text = Garlics.ToString();
@@ -19,7 +19,8 @@ public class Garlik : MonoBehaviour
     {
         if (health.CurrentHP() - goblin.GarlicCost > 0 && goblin.IsActiveToBuy)
         {
-            health.ChangeHpoints(-goblin.GarlicCost);
+
+            health.ChangeHpoints(goblin.GarlicCost);
             Garlics++;
             GarlicsText.text = Garlics.ToString();
         }

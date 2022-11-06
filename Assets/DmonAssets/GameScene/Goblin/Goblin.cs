@@ -19,7 +19,16 @@ public class Goblin : MonoBehaviour
 
     private Animator anim;
 
-    private void Start()
+
+
+    [SerializeField]
+    private AudioClip G1;
+    [SerializeField]
+    private AudioClip G2;
+    [SerializeField]
+    private AudioSource AS;
+
+private void Start()
     {
         IsActiveToBuy = false;
         GarlicCostText.text = GarlicCost.ToString();
@@ -38,6 +47,14 @@ public class Goblin : MonoBehaviour
 
     private void GoblinCome()
     {
+        if (Random.Range(0, 100) > 50)
+        {
+            AS.PlayOneShot(G1);
+        }
+        else
+        {
+            AS.PlayOneShot(G2);
+        }
         IsActiveToBuy = true;
         anim.SetTrigger("Come");
         //print("Come");

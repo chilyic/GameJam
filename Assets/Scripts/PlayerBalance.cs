@@ -10,6 +10,8 @@ public class PlayerBalance : MonoBehaviour
     [SerializeField] private LineRenderer _BuySellLine;
     [SerializeField] private Transform[] _points;
 
+    [SerializeField] private Health health;
+
     private float _cource;
     public float _currency;
 
@@ -22,9 +24,12 @@ public class PlayerBalance : MonoBehaviour
 
     public void Buy()
     {
-        DrawLine();        
-        _balance += (_currency / _cource) - (_balance / 2);
-        _balanceTxt.text = $"{_balance}";
+        DrawLine();
+
+        //_balance += (_currency / _cource) - (_balance / 2);
+        //_balanceTxt.text = $"{_balance}";
+
+        health.ChangeHpoints((_currency / _cource) - (_balance / 2));
     }
 
     public void Sell()
