@@ -5175,6 +5175,9 @@ MonoBehaviour:
   StayTime: 5
   MinTime: 5
   MaxTime: 10
+  G1: {fileID: 8300000, guid: 8b610f520b442c94b8f8a43a621b6966, type: 3}
+  G2: {fileID: 8300000, guid: c34bc16b74d707c43aca287e60a63d06, type: 3}
+  AS: {fileID: 466347818}
 --- !u!212 &1811600055
 SpriteRenderer:
   m_ObjectHideFlags: 0
