@@ -23,7 +23,7 @@ public class GraphicController : MonoBehaviour
 
         _currentCource.positionCount = 2;
 
-        InvokeRepeating(nameof(AddPoint), 0, 1f);
+        PlayGraphic();
     }
 
     private void Update()
@@ -72,5 +72,15 @@ public class GraphicController : MonoBehaviour
     public float GetCource()
     {
         return _points[_points.Count - 1].gameObject.transform.position.y;
+    }
+    
+    public void StopGraphic()
+    {
+        CancelInvoke(nameof(AddPoint));
+    }
+    
+    public void PlayGraphic()
+    {
+        InvokeRepeating(nameof(AddPoint), 0, 1f);
     }
 }
