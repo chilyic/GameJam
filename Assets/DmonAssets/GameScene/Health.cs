@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 public class Health : MonoBehaviour
 {
     [SerializeField] PlayerBalance _balance;
@@ -12,17 +13,25 @@ public class Health : MonoBehaviour
     void Start()
     {
         //Hpoints = _balance.Balance;
-        HealthText.text = _balance.Balance.ToString();
+        HealthText.text = ((int)(_balance.Balance)).ToString();
+        StartCoroutine(AwtoWin());
     }
 
-    public void ChangeHpoints(float value)
+    private IEnumerator AwtoWin()
     {
-        _balance.Balance += value;
+        yield return new WaitForSeconds(60*5);
+        WinBecome();
+    }
+
+        public void ChangeHpoints(float value)
+    {
+       
+        _balance.Balance -= value;
         if (_balance.Balance < 0)
         {
             _balance.Balance = 0;
         }
-        HealthText.text = _balance.Balance.ToString();
+        HealthText.text = ((int)(_balance.Balance)).ToString();
         if (_balance.Balance < 0)
         {
             DeathBecome();
@@ -46,4 +55,6 @@ public class Health : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+   
 }

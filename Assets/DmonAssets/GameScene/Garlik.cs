@@ -19,7 +19,7 @@ public class Garlik : MonoBehaviour
     {
         if (health.CurrentHP() - goblin.GarlicCost > 0 && goblin.IsActiveToBuy)
         {
-            health.ChangeHpoints(-goblin.GarlicCost);
+            health.ChangeHpoints(goblin.GarlicCost);
             Garlics++;
             GarlicsText.text = Garlics.ToString();
         }
