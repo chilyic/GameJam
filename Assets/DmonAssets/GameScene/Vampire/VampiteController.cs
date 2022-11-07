@@ -13,6 +13,11 @@ public class VampiteController : MonoBehaviour
     [SerializeField]
     private Slider AngerSlider;
 
+    [SerializeField]
+    private AudioSource AS;
+    [SerializeField]
+    private AudioClip AC;
+
     private void Start()
     {
         IsActiveAnger = true;
@@ -26,7 +31,7 @@ public class VampiteController : MonoBehaviour
         {
             health.DeathBecome();
         }
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         StartCoroutine(AngerTimer());
     }
 
@@ -35,6 +40,7 @@ public class VampiteController : MonoBehaviour
     {
         if (garlic.Garlics > 0)
         {
+            AS.PlayOneShot(AC);
             garlic.Garlics--;
             garlic.GarlicsText.text = garlic.Garlics.ToString();
             AngerSlider.value = 0;

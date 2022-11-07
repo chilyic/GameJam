@@ -37,9 +37,19 @@ public class GraphicController : MonoBehaviour
     public void AddPoint()
     {
         Vector3 newPos = _points[_points.Count - 1].position;
-        float rand = (float)(UnityEngine.Random.Range(-30, 30) + _multyple) / 100;
+        float r = UnityEngine.Random.Range(-100, 100);
+        if (r < 0 && r>-10)
+        {
+            r = r - UnityEngine.Random.Range(40, 80);
+        }
+        if(r>0 && r < 10)
+        {
+            r = r + UnityEngine.Random.Range(10, 90);
+        }
+        float rand = (r + _multyple) / 100;
+
         newPos.y += rand;
-        if (newPos.y > 3.9f || newPos.y < 1.75f)
+        if (newPos.y > 3.9f || newPos.y < 1.8f)
         {
             newPos.y += -2 * rand;
         }

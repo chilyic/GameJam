@@ -10,17 +10,22 @@ public class Garlik : MonoBehaviour
     [SerializeField]
     private Health health;
 
-private void Start()
+    [SerializeField]
+    private AudioClip G2;
+    [SerializeField]
+    private AudioSource AS;
+    private void Start()
     {
-        Garlics = 0;
+        Garlics = 1;
         GarlicsText.text = Garlics.ToString();
     }
+
     public void TryBuyGarlic()
     {
         if (health.CurrentHP() - goblin.GarlicCost > 0 && goblin.IsActiveToBuy)
         {
-
-            health.ChangeHpoints(goblin.GarlicCost);
+            AS.PlayOneShot(G2);
+            health.ChangeHpoints(-goblin.GarlicCost);
             Garlics++;
             GarlicsText.text = Garlics.ToString();
         }

@@ -47,6 +47,9 @@ private void Start()
 
     private void GoblinCome()
     {
+        GarlicCost += Random.Range(0, 150);
+        GarlicCostText.text = GarlicCost.ToString();
+
         if (Random.Range(0, 100) > 50)
         {
             AS.PlayOneShot(G1);

@@ -26,13 +26,13 @@ public class Health : MonoBehaviour
         public void ChangeHpoints(float value)
     {
        
-        _balance.Balance -= value;
+        _balance.Balance += value;
         if (_balance.Balance < 0)
         {
             _balance.Balance = 0;
         }
         HealthText.text = ((int)(_balance.Balance)).ToString();
-        if (_balance.Balance < 0)
+        if (_balance.Balance == 0)
         {
             DeathBecome();
         }
