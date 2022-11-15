@@ -4,11 +4,10 @@ using UnityEngine;
 public class GraphicView : MonoBehaviour
 {
     [SerializeField] private GraphicController _graphic;
-    [SerializeField] private RectTransform _graphicRect;
 
     private List<Transform> _points;
 
-    private void Start()
+    private void Awake()
     {
         _points = _graphic.Points;
         GraphicController.addPoint += MoveGraphic;

@@ -68,4 +68,5 @@ private void Start()
         anim.SetTrigger("Out");
         //print("Out");
     }
+
 }

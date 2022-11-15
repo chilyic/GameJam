@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GraphicController : MonoBehaviour
 {
+    public float Speed=1; 
     [SerializeField] private LineRenderer _currentCource;
     [SerializeField] private Transform[] _courcePoints;
     [SerializeField] private int _multyple = 0;
@@ -24,14 +25,6 @@ public class GraphicController : MonoBehaviour
         _currentCource.positionCount = 2;
 
         PlayGraphic();
-    }
-
-    private void Update()
-    {
-        for (int i = 0; i < _points.Count; i++)
-        {
-            _line.SetPosition(i, _points[i].position);
-        }
     }
 
     public void AddPoint()
@@ -55,10 +48,10 @@ public class GraphicController : MonoBehaviour
         }
 
         newPos.x += 0.2f;
-        Transform point = Instantiate(_point, newPos, Quaternion.identity, transform);
+        Transform point = Instantiate(_point, newPos, Quaternion.identity);
+
         _line.positionCount++;
         _points.Add(point);
-
         foreach (var points in _courcePoints) points.position = new Vector3(points.position.x, newPos.y, points.position.z);
         for (int i = 0; i < _courcePoints.Length; i++)
         {
@@ -69,6 +62,13 @@ public class GraphicController : MonoBehaviour
         {
             addPoint.Invoke();
             DestroyPoint();
+        }
+
+
+        
+        for (int i = 0; i < _points.Count; i++)
+        {
+            _line.SetPosition(i, _points[i].position);
         }
     }
 
@@ -91,6 +91,6 @@ public class GraphicController : MonoBehaviour
     
     public void PlayGraphic()
     {
-        InvokeRepeating(nameof(AddPoint), 0, 1f);
+        InvokeRepeating(nameof(AddPoint), 0, Speed);
     }
 }

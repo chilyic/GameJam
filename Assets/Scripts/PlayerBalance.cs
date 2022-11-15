@@ -12,6 +12,8 @@ public class PlayerBalance : MonoBehaviour
 
     [SerializeField] private Health health;
 
+
+
     private float _cource;
     public float _currency;
 
@@ -24,18 +26,24 @@ public class PlayerBalance : MonoBehaviour
 
     public void Buy()
     {
+        _BuySellLine.enabled = false;
         DrawLine();
 
         //_balance += (_currency / _cource) - (_balance / 2);
         //_balanceTxt.text = $"{_balance}";
 
         health.ChangeHpoints((_currency / _cource) - (_balance / 2));
+        _balanceTxt.text = _balance.ToString();
+
     }
 
     public void Sell()
     {
+        _BuySellLine.enabled = true;
         DrawLine();
         _currency = (_balance / 2) * _cource;
+        _balanceTxt.text = "В банке";
+       
     }
 
     public void DrawLine()
