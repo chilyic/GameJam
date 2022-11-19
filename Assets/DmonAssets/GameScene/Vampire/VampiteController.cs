@@ -18,6 +18,8 @@ public class VampiteController : MonoBehaviour
     [SerializeField]
     private AudioClip AC;
 
+
+    [SerializeField] private Animator animLight;
     private void Start()
     {
         IsActiveAnger = true;
@@ -30,6 +32,10 @@ public class VampiteController : MonoBehaviour
         if (AngerSlider.value == AngerSlider.maxValue)
         {
             health.DeathBecome();
+        }
+        if (AngerSlider.value == 85)
+        {
+            animLight.SetTrigger("LightOn");
         }
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(AngerTimer());

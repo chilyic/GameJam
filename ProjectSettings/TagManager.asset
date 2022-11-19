@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dot1
+  - Dot2
   layers:
   - Default
   - TransparentFX
@@ -46,4 +48,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 9451721
+    locked: 0
+  - name: Dot
+    uniqueID: 2155382617
     locked: 0
